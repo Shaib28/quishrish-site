@@ -28,6 +28,10 @@ body {
   background: var(--night) url("img/bg.webp") center top / cover fixed;
   -webkit-font-smoothing: antialiased;
 }
+/* מסכים רחבים (מחשב / טאבלט לרוחב): רקע מרובע ברזולוציה גבוהה, מרכז רגוע וקישוטים בצדדים */
+@media (min-width: 861px) and (min-aspect-ratio: 1/1) {
+  body { background-image: url("img/bg_wide.webp"); background-position: center center; }
+}
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 
