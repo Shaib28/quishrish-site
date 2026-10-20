@@ -225,3 +225,35 @@ html[dir="ltr"] .buy .card img { transform: rotate(-3deg); }
 .game .char { height: 110px; width: auto; }
 .lang-switch { font-family: "Rubik", sans-serif !important; font-weight: 700 !important; border: 2px solid rgba(255,255,255,.35); }
 @media (max-width: 860px) { html[dir="ltr"] .buy .card { text-align: center; } }
+
+/* ---------- קריאות: טקסט לבן על רקע בהיר ----------
+   פסקאות לבנות יושבות בתוך "בועה" כחולה-כהה שקופה למחצה (כמו פס הניווט), והכותרות מקבלות קו מתאר. */
+.lead, .hero p:not(.hero-tag) {
+  width: fit-content; max-width: min(680px, 100%);
+  margin-left: auto; margin-right: auto;
+  padding: 14px 26px;
+  background: rgba(27, 20, 104, .72);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, .28);
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(10, 0, 60, .35);
+  text-shadow: none;
+  color: #fff;
+}
+.hero p:not(.hero-tag) { margin-bottom: 30px; }
+h2 {
+  text-shadow:
+    -2px -2px 0 #2a1580, 2px -2px 0 #2a1580, -2px 2px 0 #2a1580, 2px 2px 0 #2a1580,
+    0 5px 0 rgba(40, 0, 110, .7), 0 10px 26px rgba(20, 0, 80, .55);
+}
+.prose h2 { text-shadow: none; }
+@media (max-width: 860px) {
+  .lead, .hero p:not(.hero-tag) { padding: 12px 18px; border-radius: 20px; font-size: 17px; }
+}
+/* טקסט הבועות: בולד עם קו מתאר סגול וצל קטן */
+.lead, .hero p:not(.hero-tag) {
+  font-weight: 700; letter-spacing: .2px; line-height: 1.55;
+  text-shadow:
+    -1.5px -1.5px 0 #3a1a9e, 1.5px -1.5px 0 #3a1a9e, -1.5px 1.5px 0 #3a1a9e, 1.5px 1.5px 0 #3a1a9e,
+    0 3px 0 #2a0f7a, 0 5px 10px rgba(10, 0, 60, .5);
+}
