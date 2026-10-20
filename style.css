@@ -25,12 +25,18 @@ body {
   min-height: 100vh;
   color: #fff;
   font: 400 18px/1.7 "Rubik", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  background: var(--night) url("img/bg.webp") center top / cover fixed;
+  background: var(--night);
   -webkit-font-smoothing: antialiased;
+}
+/* הרקע בשכבה נפרדת שקבועה לגודל המסך. background-attachment: fixed לא נתמך בספארי באייפון —
+   שם הרקע נמתח על כל אורך הדף ויוצא מוגדל ומטושטש. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--night) url("img/bg.webp") center center / cover no-repeat;
 }
 /* מסכים רחבים (מחשב / טאבלט לרוחב): רקע מרובע ברזולוציה גבוהה, מרכז רגוע וקישוטים בצדדים */
 @media (min-width: 861px) and (min-aspect-ratio: 1/1) {
-  body { background-image: url("img/bg_wide.webp"); background-position: center center; }
+  body::before { background-image: url("img/bg_wide.webp"); }
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
