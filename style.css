@@ -107,7 +107,7 @@ section { padding: 72px 0; }
 
 /* ---------- איך זה עובד ---------- */
 .how { align-items: center; }
-.how .board { width: 100%; max-width: 380px; margin: 0 auto; border-radius: 18px; border: 5px solid #fff; transform: rotate(-3deg); box-shadow: 0 20px 40px rgba(10, 0, 60, .5); }
+.how .board { width: 100%; height: auto; justify-self: center; max-width: 380px; margin: 0 auto; border-radius: 18px; border: 5px solid #fff; transform: rotate(-3deg); box-shadow: 0 20px 40px rgba(10, 0, 60, .5); }
 .steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
 .steps li { position: relative; padding: 0 64px 0 0; margin-bottom: 22px; counter-increment: s; }
 .steps li::before {
@@ -139,7 +139,7 @@ section { padding: 72px 0; }
 /* ---------- רכישה ---------- */
 .buy { text-align: center; }
 .buy .card { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: center; text-align: right; }
-.buy .card img { border-radius: 18px; transform: rotate(3deg); border: 5px solid #fff; box-shadow: 0 16px 30px rgba(10, 0, 60, .35); max-height: 460px; margin: 0 auto; }
+.buy .card img { border-radius: 18px; transform: rotate(3deg); border: 5px solid #fff; box-shadow: 0 16px 30px rgba(10, 0, 60, .35); width: auto; height: auto; max-width: 100%; max-height: 460px; justify-self: center; margin: 0 auto; }
 
 /* ---------- FAQ ---------- */
 .faq details { background: var(--card); color: var(--ink); border: 3px solid var(--card-edge); border-radius: 20px; margin-bottom: 14px; padding: 4px 22px; box-shadow: 0 6px 0 rgba(20, 60, 160, .3); }
