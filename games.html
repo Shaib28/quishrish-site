@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>המשחקים — QUISHRISH</title>
+<meta name="description" content="החוקים של 5 המשחקים של QUISHRISH: קוויש סנאפ, טרייד, קוויש אורדר, קוויש בום וקוויש טארגט.">
+<meta property="og:image" content="https://quishrish.com/img/og.jpg">
+<meta name="theme-color" content="#1b1468">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-logo" href="./"><img src="img/logo.webp" alt="QUISHRISH" width="900" height="492"></a>
+  <button class="nav-toggle" aria-label="תפריט" aria-expanded="false">☰</button>
+  <ul class="nav-links">
+    <li><a href="./">בית</a></li>
+    <li><a href="games.html" aria-current="page">המשחקים</a></li>
+    <li><a href="./#app">האפליקציה</a></li>
+    <li><a href="./#buy">לרכישה</a></li>
+    <li><a href="support.html">שאלות ותמיכה</a></li>
+  </ul>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>המשחקים</h2>
+      <p class="lead">5 משחקים לשני שחקנים. בכל משחק האפליקציה מובילה: סופרת, מגרילה, משמיעה את האות ושומרת על הניקוד.</p>
+
+      <!-- קוויש סנאפ -->
+      <article id="snap" class="card game-page">
+        <div class="art">
+          <img src="img/title_snap.webp" alt="קוויש סנאפ" loading="lazy">
+          <img src="img/char_cat.webp" alt="" loading="lazy" style="max-height:150px;margin-top:10px">
+        </div>
+        <div>
+          <p><span class="tag">מהירות</span><span class="tag">ריכוז</span></p>
+          <p>מי יחטוף ראשון את הסקווישי מהג'קפוט? רק כשהצליל נשמע!</p>
+          <h3>איך משחקים</h3>
+          <ol>
+            <li>בוחרים סוג משחק: <strong>על נקודות</strong> (עד כמה נקודות משחקים) או <strong>על סקווישים</strong> — המנצח לוקח את הסקווישי.</li>
+            <li>מניחים סקווישי על הג'קפוט במרכז הלוח, וכל שחקן שם את הידיים על הסימונים בצד שלו.</li>
+            <li>לוחצים "מוכנים!" — ספירה לאחור, ואז שעון מתקתק. זמן ההמתנה אקראי, אז אין אפשרות לנחש.</li>
+            <li>כשנשמע צליל הסנאפ — חוטפים! מי שחטף ראשון מקבל נקודה.</li>
+            <li>מי שהרים יד לפני הצליל — היריב מקבל את הנקודה.</li>
+          </ol>
+          <h3>פרו מוד</h3>
+          <p>מוסיף צלילים מטעים בזמן ההמתנה. חוטפים רק בצליל הסנאפ האמיתי!</p>
+        </div>
+      </article>
+
+      <!-- טרייד -->
+      <article id="trade" class="card game-page">
+        <div class="art">
+          <img src="img/title_trade.webp" alt="טרייד" loading="lazy">
+          <img src="img/char_shark.webp" alt="" loading="lazy" style="max-height:150px;margin-top:10px">
+        </div>
+        <div>
+          <p><span class="tag">החלפות</span><span class="tag">הוגנות</span></p>
+          <p>החלפת סקווישים בלי ויכוחים — האפליקציה מגרילה מי מחליף עם מי.</p>
+          <h3>איך משחקים</h3>
+          <ol>
+            <li>בוחרים כמה סקווישים כל אחד מציע (1–5), ומניחים אותם על העיגולים המסומנים.</li>
+            <li>לוחצים "טרייד!" — האפליקציה מראה החלפה אחת בכל פעם: שני עיגולים מהבהבים והסקווישים "עפים" זה למקום של זה.</li>
+            <li>מחליפים על הלוח ולוחצים "החלפנו!" — עד שכל ההחלפות בוצעו.</li>
+          </ol>
+          <h3>לייב טרייד</h3>
+          <p>למשא ומתן חופשי: מניחים את הטלפון בין השחקנים, ולוחצים ✓ עסקה, ✕ לא, או + תוסיף עוד.</p>
+        </div>
+      </article>
+
+      <!-- קוויש אורדר -->
+      <article id="order" class="card game-page">
+        <div class="art">
+          <img src="img/title_order.webp" alt="קוויש אורדר" loading="lazy">
+          <img src="img/char_dino.webp" alt="" loading="lazy" style="max-height:150px;margin-top:10px">
+        </div>
+        <div>
+          <p><span class="tag">זיכרון</span><span class="tag">מהירות</span></p>
+          <p>תסתכל טוב — יש לך רק 5 שניות!</p>
+          <h3>איך משחקים</h3>
+          <ol>
+            <li>בוחרים עד כמה נקודות משחקים, והגלגל מגריל מי מפענח ראשון.</li>
+            <li>המפענח מסתובב. השחקן השני מסדר סקווישים על העיגולים ומצלם את השורה.</li>
+            <li>המפענח מסתכל על הסידור <strong>5 שניות בלבד</strong>, ומסתובב שוב.</li>
+            <li>השחקן השני מערבב — ולמפענח יש <strong>15 שניות</strong> להחזיר את הסדר הנכון.</li>
+            <li>משווים לתמונה: סדר נכון — נקודה! ואז מתחלפים בתפקידים.</li>
+          </ol>
+        </div>
+      </article>
+
+      <!-- קוויש בום -->
+      <article id="boom" class="card game-page">
+        <div class="art">
+          <img src="img/title_boom.webp" alt="קוויש בום" loading="lazy">
+          <img src="img/bomb.webp" alt="" loading="lazy" style="max-height:150px;margin-top:10px">
+        </div>
+        <div>
+          <p><span class="tag">אומץ</span><span class="tag">תגובה</span></p>
+          <p>הפתיל בוער… אצל מי הסקווישי יהיה כשהפצצה תתפוצץ?</p>
+          <h3>איך משחקים</h3>
+          <ol>
+            <li>בוחרים מה עושים לפני כל העברה: לחיצה אחת, הקפצה, או עצירה על הג'קפוט.</li>
+            <li>בוחרים כמה פיצוצים עד להפסד, ולוחצים "הפעל טיימר".</li>
+            <li>מעבירים את הסקווישי מצד לצד בזמן שהפתיל בוער. זמן הפיצוץ אקראי!</li>
+            <li>BOOM! — לוחצים על מי שהסקווישי היה אצלו, והיריב מקבל נקודה.</li>
+          </ol>
+        </div>
+      </article>
+
+      <!-- קוויש טארגט -->
+      <article id="target" class="card game-page">
+        <div class="art">
+          <img src="img/title_target.webp" alt="קוויש טארגט" loading="lazy">
+          <img src="img/char_panda.webp" alt="" loading="lazy" style="max-height:150px;margin-top:10px">
+        </div>
+        <div>
+          <p><span class="tag">דיוק</span><span class="tag">חשבון</span></p>
+          <p>קולעים סקווישים למטרה ויורדים בנקודות — עד בדיוק 0!</p>
+          <h3>איך משחקים</h3>
+          <ol>
+            <li>בוחרים עם כמה נקודות מתחילים (למשל 200), והגלגל מגריל מי ראשון.</li>
+            <li>מניחים את הטלפון לרוחב על השולחן. בכל תור זורקים סקווישי על המטרה.</li>
+            <li>לוחצים באפליקציה איפה הוא נחת: 10, 20, 50 או ג'קפוט 100 — והנקודות יורדות. מחוץ למטרה = החטאה.</li>
+            <li>חייבים להגיע <strong>בדיוק ל־0</strong>. פגיעה שתוריד מתחת לאפס לא נספרת.</li>
+          </ol>
+        </div>
+      </article>
+
+      <p style="text-align:center;margin-top:40px"><a class="btn" href="./#app">להורדת האפליקציה</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="img/logo.webp" alt="QUISHRISH" width="900" height="492" loading="lazy">
+    <nav>
+      <a href="./">בית</a>
+      <a href="support.html">שאלות ותמיכה</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a data-email href="#"></a>
+    </nav>
+    <small>© <span data-year></span> QUISHRISH. כל הזכויות שמורות.</small>
+  </div>
+</footer>
+
+</body>
+</html>
