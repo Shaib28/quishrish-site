@@ -199,3 +199,29 @@ footer small { opacity: .7; font-size: 14px; }
   .card { padding: 22px 18px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- English (LTR) ----------
+   Lachish has no Latin glyphs, so English uses Titan One (the "PLAYER 1/2" font from the design). */
+@font-face { font-family: "Titan"; src: url("fonts/TitanOne-Regular.woff2") format("woff2"); font-display: swap; }
+html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] .btn,
+html[lang="en"] .nav-links a, html[lang="en"] .faq summary, html[lang="en"] .contact-box .mail, html[lang="en"] .brand-font {
+  font-family: "Titan", "Rubik", sans-serif; font-weight: 400; letter-spacing: .3px;
+}
+html[lang="en"] h2 { font-size: clamp(28px, 4.6vw, 42px); }
+html[lang="en"] .btn { font-size: 20px; }
+html[lang="en"] .hero-tag { font-family: "Titan", sans-serif; font-size: clamp(22px, 4vw, 34px); color: var(--yellow);
+  text-shadow: 0 3px 0 #a4056a, 0 6px 18px rgba(40, 0, 90, .6); margin: 0 auto 18px; max-width: 640px; line-height: 1.25; }
+html[dir="ltr"] .steps li { padding: 0 0 0 64px; }
+html[dir="ltr"] .steps li::before { right: auto; left: 0; }
+html[dir="ltr"] .features li { padding-right: 0; padding-left: 34px; }
+html[dir="ltr"] .features li::before { right: auto; left: 0; }
+html[dir="ltr"] .faq summary::after { float: right; }
+html[dir="ltr"] .buy .card { text-align: left; }
+html[dir="ltr"] .game-page ol, html[dir="ltr"] .game-page ul { padding-right: 0; padding-left: 22px; }
+html[dir="ltr"] .tag { margin: 0 6px 0 0; }
+html[dir="ltr"] .buy .card img { transform: rotate(-3deg); }
+.game-name { font-family: "Titan", sans-serif; font-size: 30px; color: var(--pink); margin: 6px 0 8px;
+  text-shadow: 0 3px 0 #ffd2ee; line-height: 1.1; }
+.game .char { height: 110px; width: auto; }
+.lang-switch { font-family: "Rubik", sans-serif !important; font-weight: 700 !important; border: 2px solid rgba(255,255,255,.35); }
+@media (max-width: 860px) { html[dir="ltr"] .buy .card { text-align: center; } }
