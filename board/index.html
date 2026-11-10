@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>חברו את הלוח — QUISHRISH</title>
+<meta name="description" content="מורידים את אפליקציית QUISHRISH ומחברים את הלוח כדי לפתוח את המשחקים.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1b1468">
+<link rel="icon" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script src="../site.js"></script>
+<style>
+  .board-page { min-height: 100vh; display: flex; align-items: center; padding: 28px 0 48px; text-align: center; }
+  .board-page .logo { width: min(360px, 78%); margin: 0 auto 6px; filter: drop-shadow(0 10px 24px rgba(20, 0, 80, .5)); }
+  .board-page .card { max-width: 460px; margin: 0 auto; padding: 26px 22px 30px; }
+  .board-page h1 { color: var(--ink); font-size: clamp(26px, 7vw, 34px); margin-bottom: 4px; }
+  .board-page .lead-in { color: #24306e; font-size: 18px; margin: 0 0 20px; }
+  .qsteps { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 10px; text-align: right; }
+  .qsteps li { display: flex; gap: 12px; align-items: center; color: #24306e; font-size: 17px; font-weight: 500; }
+  .qsteps b { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: "Lachish", sans-serif; background: var(--pink); }
+  .ctas-col { display: grid; gap: 14px; }
+  .ctas-col .btn { width: 100%; box-sizing: border-box; }
+  .note { color: #4a5590; font-size: 14px; margin: 16px 0 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main class="board-page">
+  <div class="wrap">
+    <img class="logo" src="../img/logo.webp" alt="QUISHRISH" width="900" height="492">
+    <div class="card">
+      <h1>ברוכים הבאים!</h1>
+      <p class="lead-in">עוד רגע משחקים עם הלוח החדש</p>
+      <ul class="qsteps">
+        <li><b>1</b><span>מורידים את האפליקציה</span></li>
+        <li><b>2</b><span>חוזרים לכאן (או סורקים שוב את הקוד) ולוחצים "פתיחת המשחקים"</span></li>
+      </ul>
+
+      <!-- אנדרואיד: כפתור אחד. אם האפליקציה מותקנת היא נפתחת, ואם לא — עוברים ל-Google Play -->
+      <div class="ctas-col" id="android" hidden>
+        <a class="btn" id="android-go">פתיחת המשחקים</a>
+        <a class="btn blue small" id="android-store">הורדה מ-Google Play</a>
+      </div>
+
+      <!-- אייפון -->
+      <div class="ctas-col" id="ios" hidden>
+        <a class="btn blue" id="ios-store">הורדה מ-App Store</a>
+        <a class="btn" id="ios-open">כבר יש לי את האפליקציה: פתיחת המשחקים</a>
+      </div>
+
+      <!-- מחשב -->
+      <div class="ctas-col" id="desktop" hidden>
+        <a class="btn blue" id="d-ios">הורדה מ-App Store</a>
+        <a class="btn green" id="d-android">הורדה מ-Google Play</a>
+        <p class="note">כדי לחבר את הלוח, סרקו את הקוד שעל האריזה עם הטלפון.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  // הקישורים לחנויות מגיעים מ-site.js. עד שהאפליקציה תעלה לחנויות: קישורים כלליים
+  const APP_STORE = (typeof SITE !== 'undefined' && SITE.appStoreUrl) || 'https://www.apple.com/app-store/';
+  const PLAY_STORE = (typeof SITE !== 'undefined' && SITE.playStoreUrl) || 'https://play.google.com/store/apps';
+  const PKG = 'com.quishrish.game';
+
+  // הקוד מהברקוד (?k=...) עובר כמו שהוא לאפליקציה, והיא בודקת אותו
+  const k = new URLSearchParams(location.search).get('k') || '';
+  const q = k ? '?k=' + encodeURIComponent(k) : '';
+  const appLink = 'quishrish://board' + q;
+
+  const ua = navigator.userAgent;
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const $ = (id) => document.getElementById(id);
+
+  if (isAndroid) {
+    $('android').hidden = false;
+    $('android-go').href = 'intent://board' + q + '#Intent;scheme=quishrish;package=' + PKG
+      + ';S.browser_fallback_url=' + encodeURIComponent(PLAY_STORE) + ';end';
+    $('android-store').href = PLAY_STORE;
+  } else if (isIOS) {
+    $('ios').hidden = false;
+    $('ios-store').href = APP_STORE;
+    $('ios-open').href = appLink;
+  } else {
+    $('desktop').hidden = false;
+    $('d-ios').href = APP_STORE;
+    $('d-android').href = PLAY_STORE;
+  }
+</script>
+</body>
+</html>
