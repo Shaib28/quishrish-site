@@ -138,11 +138,27 @@ section { padding: 72px 0; }
 .shots img { flex: 0 0 auto; width: 210px; border-radius: 28px; border: 5px solid #fff; scroll-snap-align: center; box-shadow: 0 14px 30px rgba(10, 0, 60, .45); }
 .shots:focus { outline: none; }
 .shots:focus-visible { outline: 3px solid #fff; outline-offset: 4px; border-radius: 12px; }
-/* מסך רחב: כל 8 הצילומים בגריד של 4×2, בלי גלילה ובלי צילום חתוך בקצה */
+/* מסך רחב: 4 צילומים שלמים בשורה, גלילה לרוחב (גרירה / גלגלת / חצים) — אף צילום לא חתוך בקצה */
+.shots-box { position: relative; }
+.shots-arrow { display: none; }
 @media (min-width: 861px) {
-  .shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; overflow: visible; padding: 10px 0 0; }
-  .shots img { width: 100%; max-width: 250px; justify-self: center; }
+  .shots { gap: 22px; scroll-snap-type: x mandatory; scroll-padding-inline: 4px; scrollbar-width: none; }
+  .shots::-webkit-scrollbar { display: none; }
+  .shots img { width: calc((100% - 66px) / 4); scroll-snap-align: start; }
+  .shots-arrow { display: grid; place-items: center; position: absolute; top: calc(50% - 34px); z-index: 2;
+    width: 54px; height: 54px; border-radius: 50%; border: 4px solid #fff; background: #ff2fa0; color: #fff;
+    cursor: pointer; box-shadow: 0 8px 20px rgba(10, 0, 60, .45); transition: opacity .2s, transform .15s; }
+  .shots-arrow:hover { transform: scale(1.08); }
+  .shots-arrow[disabled] { opacity: 0; pointer-events: none; }
+  .shots-arrow svg { width: 24px; height: 24px; }
+  .shots-arrow.prev { inset-inline-start: -30px; }
+  .shots-arrow.next { inset-inline-end: -30px; }
+  html[dir="rtl"] .shots-arrow svg { transform: scaleX(-1); }
 }
+.shots-dots { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
+.shots-dots span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.45); transition: background .2s, width .2s; }
+.shots-dots span.on { background: #fff; width: 26px; border-radius: 5px; }
+
 .features { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .features li { padding-right: 34px; position: relative; font-weight: 500; }
 .features li::before { content: "✓"; position: absolute; right: 0; top: -2px; width: 26px; height: 26px; border-radius: 50%; background: #59d634; color: #fff; font-weight: 800; display: grid; place-items: center; font-size: 16px; }
